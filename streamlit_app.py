@@ -25,11 +25,12 @@ streamlit.dataframe(fruits_to_show)
 streamlit.header("Fruityvice Fruit Advice!")
 
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response.json())
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+# streamlit.text(fruityvice_response.json())
 
-# take the json version of the response and normalize it
+
+# take the json version of the response and normalize it//places selected items in a table/SSMS like display on screen
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-#output it the screen as a table
+# output it the screen as a table//Takes Watermelon referenced in the API and displays it in a table
 streamlit.dataframe(fruityvice_normalized)
 
