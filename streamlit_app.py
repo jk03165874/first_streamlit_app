@@ -30,9 +30,9 @@ import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 # streamlit.text(fruityvice_response.json())
 
-
 # take the json version of the response and normalize it//places selected items in a table/SSMS like display on screen
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output it the screen as a table//Takes Watermelon referenced in the API and displays it in a table
 streamlit.dataframe(fruityvice_normalized)
 
+import snowflake.connector
