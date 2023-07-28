@@ -34,4 +34,4 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output it the screen as a table//Takes Watermelon referenced in the API and displays it in a table
 streamlit.dataframe(fruityvice_normalized)
-
+import snowflake.connector
