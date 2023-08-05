@@ -47,4 +47,4 @@ streamlit.dataframe(my_data_rows)
 fruits_added = streamlit.multiselect("Add some fruits:", list(my_fruit_list.index), ['jackfruit'])
 fruits_to_add = my_fruit_list.loc[fruits_added]
 streamlit.header("Thanks for adding:")
-streamlit.write('The user entered:', fruit_added)
+
