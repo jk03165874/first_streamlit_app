@@ -57,11 +57,23 @@ if streamlit.button('Get Fruit Load List'):
       my_data_rows = get_fruit_load_list()
       streamlit.dataframe(my_data_rows)
       
+# Allow the end user to add a fruit to the list
+def insert_row_snowflake(new_fruit):
+      with my_cnx.cursor() as my_cur:
+           my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+           return "Thansk for adding " + new_fruit
+
+add_my_fruit = streamlit.text_input('What fruit would you like to add?')
+if streamlit.button('Add a Fruit to the List'):
+      my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+      back_from_function = insert_row_snowflake(add_my_fruit)
+      streamlit.text(back_from_function)
+      
 # streamlit.text(fruityvice_response.json())
 # take the json version of the response and normalize it//places selected items in a table/SSMS like display on screen
 # output it the screen as a table//Takes Watermelon referenced in the API and displays it in a table
 #don't run anything past here while we troubleshoot
-streamlit.stop()
+ =streamlit.stop()
 
 
 
@@ -70,10 +82,10 @@ streamlit.stop()
 
 
 
-# Allow the end user to add a fruit to the list
+
 streamlit.header("Fruityvice Fruit Additions!")
 fruits_added = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding ', fruits_added)
 
 #This will not work correctly, it adds same phrase regardless of change above.  Just go with it.
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
