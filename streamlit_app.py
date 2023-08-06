@@ -73,7 +73,7 @@ if streamlit.button('Add a Fruit to the List'):
 # take the json version of the response and normalize it//places selected items in a table/SSMS like display on screen
 # output it the screen as a table//Takes Watermelon referenced in the API and displays it in a table
 #don't run anything past here while we troubleshoot
- =streamlit.stop()
+       streamlit.stop()
 
 
 
