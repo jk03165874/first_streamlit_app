@@ -69,23 +69,5 @@ if streamlit.button('Add a Fruit to the List'):
       back_from_function = insert_row_snowflake(add_my_fruit)
       streamlit.text(back_from_function)
       
-# streamlit.text(fruityvice_response.json())
-# take the json version of the response and normalize it//places selected items in a table/SSMS like display on screen
-# output it the screen as a table//Takes Watermelon referenced in the API and displays it in a table
-#don't run anything past here while we troubleshoot
-       streamlit.stop()
 
-
-
-
-
-
-
-
-
-streamlit.header("Fruityvice Fruit Additions!")
-fruits_added = streamlit.text_input('What fruit would you like to add?','jackfruit')
-streamlit.write('Thanks for adding ', fruits_added)
-
-#This will not work correctly, it adds same phrase regardless of change above.  Just go with it.
 
